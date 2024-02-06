@@ -12,6 +12,8 @@
 		D4628C1C2B64894A00B2767B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4628C1B2B64894A00B2767B /* ContentView.swift */; };
 		D4628C1E2B64894B00B2767B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4628C1D2B64894B00B2767B /* Assets.xcassets */; };
 		D4628C212B64894B00B2767B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4628C202B64894B00B2767B /* Preview Assets.xcassets */; };
+		D4AE11402B71B571005106CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE113F2B71B571005106CA /* MapView.swift */; };
+		D4E079D92B6A046000EAEA37 /* ViewStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E079D82B6A046000EAEA37 /* ViewStates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		D4628C1B2B64894A00B2767B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D4628C1D2B64894B00B2767B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4628C202B64894B00B2767B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4AE113F2B71B571005106CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D4E079D82B6A046000EAEA37 /* ViewStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 				D4628C192B64894A00B2767B /* BucketListApp.swift */,
 				D4628C1B2B64894A00B2767B /* ContentView.swift */,
 				D41F0D5C2B69E36600797A17 /* FileManager-Decodable.swift */,
+				D4E079D82B6A046000EAEA37 /* ViewStates.swift */,
 				D4628C1D2B64894B00B2767B /* Assets.xcassets */,
 				D4628C1F2B64894B00B2767B /* Preview Content */,
+				D4AE113F2B71B571005106CA /* MapView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 			files = (
 				D4628C1C2B64894A00B2767B /* ContentView.swift in Sources */,
 				D41F0D5D2B69E36600797A17 /* FileManager-Decodable.swift in Sources */,
+				D4AE11402B71B571005106CA /* MapView.swift in Sources */,
+				D4E079D92B6A046000EAEA37 /* ViewStates.swift in Sources */,
 				D4628C1A2B64894A00B2767B /* BucketListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

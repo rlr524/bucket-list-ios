@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingMap = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -28,6 +30,15 @@ struct ContentView: View {
                 
                 //getDirectory()
             }
+            
+            Spacer()
+            
+            Button("Map View") {
+                showingMap.toggle()
+            }
+            .sheet(isPresented: $showingMap, content: {
+                MapView()
+            })
         }
         .padding()
     }
