@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingMap = false
-    
-    var body: some View {
+    @State private var showingAuth = false
+
+    var body: some View {        
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -39,6 +40,15 @@ struct ContentView: View {
             .sheet(isPresented: $showingMap, content: {
                 MapView()
             })
+            
+            Spacer()
+            
+            Button("Authentication View") {
+                showingAuth.toggle()
+            }
+            .sheet(isPresented: $showingAuth, content: {
+                AuthenticationView()
+            })
         }
         .padding()
     }
@@ -46,7 +56,6 @@ struct ContentView: View {
     func getDirectory() {
         print(URL.documentsDirectory)
     }
-    
 }
 
 #Preview {

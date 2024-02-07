@@ -11,13 +11,16 @@ import MapKit
 struct MapView: View {
     @State private var position = MapCameraPosition.region(
         MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+            center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), 
+            span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
         )
     )
     
     let locations = [
-        Location(name: "Buckingham Palace", coordinate: CLLocationCoordinate2D(latitude: 51.501, longitude: -0.141)),
-        Location(name: "Tower of London", coordinate: CLLocationCoordinate2D(latitude: 51.508, longitude: -0.076))
+        Location(name: "Buckingham Palace", coordinate: CLLocationCoordinate2D(latitude: 51.501, 
+                                                                               longitude: -0.141)),
+        Location(name: "Tower of London", coordinate: CLLocationCoordinate2D(latitude: 51.508, 
+                                                                             longitude: -0.076))
     ]
     
     var body: some View {
