@@ -15,6 +15,7 @@
 		D47025622B7327160086EE79 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47025612B7327160086EE79 /* AuthenticationView.swift */; };
 		D4AE11402B71B571005106CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AE113F2B71B571005106CA /* MapView.swift */; };
 		D4E079D92B6A046000EAEA37 /* ViewStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E079D82B6A046000EAEA37 /* ViewStates.swift */; };
+		D4F30D932B748A0000AD8B07 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F30D922B748A0000AD8B07 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D47025612B7327160086EE79 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		D4AE113F2B71B571005106CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D4E079D82B6A046000EAEA37 /* ViewStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStates.swift; sourceTree = "<group>"; };
+		D4F30D922B748A0000AD8B07 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +63,10 @@
 			children = (
 				D4628C192B64894A00B2767B /* BucketListApp.swift */,
 				D4628C1B2B64894A00B2767B /* ContentView.swift */,
-				D41F0D5C2B69E36600797A17 /* FileManager-Decodable.swift */,
-				D4E079D82B6A046000EAEA37 /* ViewStates.swift */,
+				D4F30D922B748A0000AD8B07 /* Location.swift */,
+				D4F30D912B74880A00AD8B07 /* Practice */,
 				D4628C1D2B64894B00B2767B /* Assets.xcassets */,
 				D4628C1F2B64894B00B2767B /* Preview Content */,
-				D4AE113F2B71B571005106CA /* MapView.swift */,
-				D47025612B7327160086EE79 /* AuthenticationView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -77,6 +77,17 @@
 				D4628C202B64894B00B2767B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4F30D912B74880A00AD8B07 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				D4E079D82B6A046000EAEA37 /* ViewStates.swift */,
+				D41F0D5C2B69E36600797A17 /* FileManager-Decodable.swift */,
+				D4AE113F2B71B571005106CA /* MapView.swift */,
+				D47025612B7327160086EE79 /* AuthenticationView.swift */,
+			);
+			path = Practice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				D4AE11402B71B571005106CA /* MapView.swift in Sources */,
 				D4E079D92B6A046000EAEA37 /* ViewStates.swift in Sources */,
 				D4628C1A2B64894A00B2767B /* BucketListApp.swift in Sources */,
+				D4F30D932B748A0000AD8B07 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
