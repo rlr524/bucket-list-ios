@@ -13,8 +13,8 @@ struct ContentView: View {
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 47, longitude: -122),
-            span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+            center: CLLocationCoordinate2D(latitude: 35, longitude: 139),
+            span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
         )
     )
     
@@ -22,8 +22,14 @@ struct ContentView: View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
                 ForEach(locations) { location in
-                    Marker(location.name, coordinate: CLLocationCoordinate2D(
-                        latitude: location.latitude, longitude: location.longitude))
+                    Annotation(location.name, coordinate: location.coordinate) {
+                        Image(systemName: "star.circle")
+                            .resizable()
+                            .foregroundStyle(.red)
+                            .frame(width: 44, height: 44)
+                            .background(.white)
+                            .clipShape(.circle)
+                    }
                 }
             }
             // Be careful not to overuse tap gestures as they are problematic with screen
