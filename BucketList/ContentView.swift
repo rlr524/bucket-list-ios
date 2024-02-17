@@ -9,8 +9,8 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    @State private var locations = [Location]()
-    @State private var selectedPlace: Location?
+    @State private var locations = [PinnedLocation]()
+    @State private var selectedPlace: PinnedLocation?
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -42,7 +42,7 @@ struct ContentView: View {
             // user tapping on the map.
             .onTapGesture { position in
                 if let coordinate = proxy.convert(position, from: .local) {
-                    let newLocation = Location(id: UUID(), name: "New Location",
+                    let newLocation = PinnedLocation(id: UUID(), name: "New Location",
                                                description: "", latitude: coordinate.latitude,
                                                longitude: coordinate.longitude)
                     locations.append(newLocation)

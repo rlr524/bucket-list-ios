@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-struct Location: Codable, Equatable, Identifiable {
+struct PinnedLocation: Codable, Equatable, Identifiable {
     var id: UUID
     var name: String
     var description: String
@@ -21,13 +21,13 @@ struct Location: Codable, Equatable, Identifiable {
     
     // Example for preview, if DEBUG macro suppresses this from App Store release.
     #if DEBUG
-    static let example = Location(id: UUID(),
+    static let example = PinnedLocation(id: UUID(),
                                   name: "Imperial Palace",
                                   description: "The residence of the Emperor since 1869",
                                   latitude: 35.6895, longitude: 139.7521)
     #endif
     
-    static func ==(lhs: Location, rhs: Location) -> Bool {
+    static func ==(lhs: PinnedLocation, rhs: PinnedLocation) -> Bool {
         lhs.id == rhs.id
     }
 }
