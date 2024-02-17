@@ -9,8 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    @State private var locations = [PinnedLocation]()
-    @State private var selectedPlace: PinnedLocation?
+    @State private var vm = ViewModel()
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -22,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
-                ForEach(locations) { location in
+                ForEach(vm.locations) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
                         Image(systemName: "star.circle")
                             .resizable()
@@ -31,7 +30,7 @@ struct ContentView: View {
                             .background(.white)
                             .clipShape(.circle)
                             .onLongPressGesture {
-                                selectedPlace = location
+                                vm.selectedPlace = location
                             }
                     }
                 }
@@ -42,19 +41,14 @@ struct ContentView: View {
             // user tapping on the map.
             .onTapGesture { position in
                 if let coordinate = proxy.convert(position, from: .local) {
-                    let newLocation = PinnedLocation(id: UUID(), name: "New Location",
-                                               description: "", latitude: coordinate.latitude,
-                                               longitude: coordinate.longitude)
-                    locations.append(newLocation)
+                    vm.addLocation(at: coordinate)
                 }
             }
-            .sheet(item: $selectedPlace) { place in
+            .sheet(item: $vm.selectedPlace) { place in
                 Text(place.name)
                 
-                EditView(location: place) { newLocation in
-                    if let index = locations.firstIndex(of: place) {
-                        locations[index] = newLocation
-                    }
+                EditView(location: place) {
+                    vm.updateLocation(location: $0)
                 }
             }
         }

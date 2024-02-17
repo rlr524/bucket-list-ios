@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4179A872B8044A4002B68BD /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4179A862B8044A4002B68BD /* ContentView-ViewModel.swift */; };
 		D41F0D5D2B69E36600797A17 /* FileManager-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F0D5C2B69E36600797A17 /* FileManager-Decodable.swift */; };
 		D43C27AC2B7EEEA00050C5BF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C27AB2B7EEEA00050C5BF /* EditView.swift */; };
 		D4628C1A2B64894A00B2767B /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4628C192B64894A00B2767B /* BucketListApp.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4179A862B8044A4002B68BD /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		D41F0D5C2B69E36600797A17 /* FileManager-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Decodable.swift"; sourceTree = "<group>"; };
 		D43C27AB2B7EEEA00050C5BF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D4628C162B64894A00B2767B /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4179A882B8048C8002B68BD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D4179A862B8044A4002B68BD /* ContentView-ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D4628C0D2B64894A00B2767B = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D4628C192B64894A00B2767B /* BucketListApp.swift */,
-				D4628C1B2B64894A00B2767B /* ContentView.swift */,
+				D4179A882B8048C8002B68BD /* ViewModels */,
 				D47C35B92B801D9400E2EFD9 /* Views */,
 				D47C35B82B801D8300E2EFD9 /* Models */,
 				D4F30D912B74880A00AD8B07 /* Practice */,
@@ -96,6 +106,7 @@
 		D47C35B92B801D9400E2EFD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D4628C1B2B64894A00B2767B /* ContentView.swift */,
 				D43C27AB2B7EEEA00050C5BF /* EditView.swift */,
 			);
 			path = Views;
@@ -189,6 +200,7 @@
 				D47025622B7327160086EE79 /* AuthenticationView.swift in Sources */,
 				D4AE11402B71B571005106CA /* MapView.swift in Sources */,
 				D4E079D92B6A046000EAEA37 /* ViewStates.swift in Sources */,
+				D4179A872B8044A4002B68BD /* ContentView-ViewModel.swift in Sources */,
 				D4628C1A2B64894A00B2767B /* BucketListApp.swift in Sources */,
 				D4F30D932B748A0000AD8B07 /* PinnedLocation.swift in Sources */,
 			);
