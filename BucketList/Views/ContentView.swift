@@ -19,38 +19,46 @@ struct ContentView: View {
     )
     
     var body: some View {
-        MapReader { proxy in
-            Map(initialPosition: startPosition) {
-                ForEach(vm.locations) { location in
-                    Annotation(location.name, coordinate: location.coordinate) {
-                        Image(systemName: "star.circle")
-                            .resizable()
-                            .foregroundStyle(.red)
-                            .frame(width: 44, height: 44)
-                            .background(.white)
-                            .clipShape(.circle)
-                            .onLongPressGesture {
-                                vm.selectedPlace = location
-                            }
+        if vm.isUnlocked {
+            MapReader { proxy in
+                Map(initialPosition: startPosition) {
+                    ForEach(vm.locations) { location in
+                        Annotation(location.name, coordinate: location.coordinate) {
+                            Image(systemName: "star.circle")
+                                .resizable()
+                                .foregroundStyle(.red)
+                                .frame(width: 44, height: 44)
+                                .background(.white)
+                                .clipShape(.circle)
+                                .onLongPressGesture {
+                                    vm.selectedPlace = location
+                                }
+                        }
+                    }
+                }
+                // Be careful not to overuse tap gestures as they are problematic with screen
+                // readers. Instead, use buttons or other built-in controls. In this case,
+                // a tap gesture must be used as that's the only way to accommodate a
+                // user tapping on the map.
+                .onTapGesture { position in
+                    if let coordinate = proxy.convert(position, from: .local) {
+                        vm.addLocation(at: coordinate)
+                    }
+                }
+                .sheet(item: $vm.selectedPlace) { place in
+                    Text(place.name)
+                    
+                    EditView(location: place) {
+                        vm.updateLocation(location: $0)
                     }
                 }
             }
-            // Be careful not to overuse tap gestures as they are problematic with screen
-            // readers. Instead, use buttons or other built-in controls. In this case,
-            // a tap gesture must be used as that's the only way to accommodate a
-            // user tapping on the map.
-            .onTapGesture { position in
-                if let coordinate = proxy.convert(position, from: .local) {
-                    vm.addLocation(at: coordinate)
-                }
-            }
-            .sheet(item: $vm.selectedPlace) { place in
-                Text(place.name)
-                
-                EditView(location: place) {
-                    vm.updateLocation(location: $0)
-                }
-            }
+        } else {
+            Button("Unlock Places", action: vm.authenticate)
+                .padding()
+                .background(.blue)
+                .foregroundStyle(.white)
+                .clipShape(.capsule)
         }
     }
 }

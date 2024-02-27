@@ -8,10 +8,12 @@
 import Foundation
 import MapKit
 import CoreLocation
+import LocalAuthentication
 
 extension ContentView {
     @Observable
     class ViewModel {
+        var isUnlocked = false
         private(set) var locations: [PinnedLocation]
         var selectedPlace: PinnedLocation?
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
@@ -50,6 +52,29 @@ extension ContentView {
                 try data.write(to: savePath, options: [.atomic, .completeFileProtection])
             } catch {
                 print("Unable to save data.")
+            }
+        }
+        
+        func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+            
+            // The reason string here is for touch id and the
+            // reason string in Info.plist is for Face ID
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Please authenticate yourself to unlock your places."
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
+                                       localizedReason: reason) { success, authenticationError in
+                    
+                    if success {
+                        self.isUnlocked = true
+                    } else {
+                        // error
+                    }
+                }
+            } else {
+                // no biometrics
             }
         }
     }
