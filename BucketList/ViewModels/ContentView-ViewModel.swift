@@ -16,6 +16,10 @@ extension ContentView {
         var isUnlocked = false
         private(set) var locations: [PinnedLocation]
         var selectedPlace: PinnedLocation?
+        
+        var authenticationError = "Unnkown error"
+        var isShowingAuthenticationError = false
+        
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
         
         init() {
@@ -70,11 +74,16 @@ extension ContentView {
                     if success {
                         self.isUnlocked = true
                     } else {
-                        // error
+                        self.authenticationError = 
+                        "There was a problem authenticating you. Please try again."
+                        self.isShowingAuthenticationError = true
                     }
                 }
             } else {
-                // no biometrics
+                // No biometrics
+                authenticationError =
+                "Sorry, your device does not support biometric authentication."
+                isShowingAuthenticationError = true
             }
         }
     }
